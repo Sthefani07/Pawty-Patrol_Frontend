@@ -1,6 +1,6 @@
 import {Routes, Route} from 'react-router-dom'
 import Home from './pages/Home.jsx'
-import AuthPage from './pages/auth/index'
+import AuthPage from './pages/auth.jsx'
 import Navbar from './components/navBar/index.jsx';
 
 
