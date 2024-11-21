@@ -1,7 +1,10 @@
 import {Routes, Route} from 'react-router-dom'
-import Home from './pages/Home.jsx'
-import AuthPage from './pages/auth.jsx'
+import Dashboard from './pages/Dashboard.jsx'
+import Auth from './pages/auth.jsx'
 import Navbar from './components/navBar/index.jsx';
+import AuthProvider from './contexts/Auth/AuthContext.jsx';
+import Home from './pages/home.jsx';
+import Locations from './pages/Locations.jsx'
 
 
 
@@ -9,11 +12,15 @@ import Navbar from './components/navBar/index.jsx';
 function App() {
   return (
     <>
+    <AuthProvider>
     <Navbar />
       <Routes>
-        <Route path='/auth' element={<AuthPage />} />
-        <Route path="/home" element={<Home />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/auth' element={<Auth />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path='locations' element={<Locations />} />
       </Routes>
+      </AuthProvider>
     </>
   );
 }

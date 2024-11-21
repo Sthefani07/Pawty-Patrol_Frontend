@@ -1,34 +1,15 @@
-import { useAuth } from '../contexts/Auth/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-const Home = () => {
-  const { logout } = useAuth();
-  const nav = useNavigate();
-
-  function handleLogOut(e) {
-    logout();
-    nav('/auth')
-  }
-  return (
-    <div>
-      <h1>Home page only users ..testing..</h1>
-      <button onClick={handleLogOut}>LogOut</button>
-    </div>
-  );
-};
+const Home = ()=> {
+    return(
+        <div className="home-container">
+            <h1>Welcome to Pawty Patrol {username}!</h1>
+            <p>Find and create events for your furry friends.</p>
+            <Link to="/auth">
+            <button>Get Started</button>
+            </Link>
+        </div>
+    )
+}
 
 export default Home;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
