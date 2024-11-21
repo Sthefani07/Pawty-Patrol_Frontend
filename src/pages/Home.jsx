@@ -1,4 +1,4 @@
-import { useAuth } from '../../contexts/Auth/AuthContext';
+import { useAuth } from '../contexts/Auth/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
   }
   return (
     <div>
-      <h1>Home page</h1>
+      <h1>Home page only users ..testing..</h1>
       <button onClick={handleLogOut}>LogOut</button>
     </div>
   );
