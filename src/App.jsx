@@ -1,15 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import {Routes, Route} from 'react-router-dom'
+import Home from './pages/homePage/home.jsx'
+import AuthPage from './pages/auth/index'
 
 
 
 
 function App() {
   return (
-    <Router>
+    
       <Routes>
-        {/* <Route path="/" element={< />} /> */}
+        <Route path='/auth' element={<AuthPage />} />
+        <Route path="/auth" element={<Home />} />
       </Routes>
-    </Router>
+    
   );
 }
 
