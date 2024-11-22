@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { addEvent } from "../services/events";
+import { addEvent } from "../../services/events";
 
 const AddEventForm = () =>{
     const [formData, setFormData] = useState({

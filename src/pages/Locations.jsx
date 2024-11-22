@@ -6,7 +6,8 @@ const Locations=() => {
 
     useEffect(()=>{
         async function fetchEvents() {
-         const data = await getEvents()   
+         const data = await getEvents() 
+         setEvents(data)  
         }
         fetchEvents()
     }, [])
