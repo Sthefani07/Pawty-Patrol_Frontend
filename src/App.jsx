@@ -1,9 +1,9 @@
 import {Routes, Route} from 'react-router-dom'
-import Dashboard from './pages/Dashboard.jsx'
+import Home from './pages/Home.jsx'
 import Auth from './pages/auth.jsx'
 import Navbar from './components/navBar/index.jsx';
 import AuthProvider from './contexts/Auth/AuthContext.jsx';
-import Home from './pages/home.jsx';
+//import Home from './pages/home.jsx';
 import Locations from './pages/Locations.jsx'
 import AddEvent from './pages/AddEvent.jsx';
 import { useCookies } from 'react-cookie';
@@ -17,9 +17,9 @@ function App() {
     <AuthProvider>
     <Navbar />
       <Routes>
-        <Route path='/' element={<Home />} />
+        
         <Route path='/auth' element={<Auth />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/Dashboard" element={<Home />} />
         <Route path='locations' element={<Locations />} />
         <Route path='/Add-event' element={< AddEvent/>} />
       </Routes>
