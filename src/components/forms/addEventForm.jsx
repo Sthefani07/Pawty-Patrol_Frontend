@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { addEvent } from "../../services/events";
+import { useCookies } from "react-cookie";
 
 const AddEventForm = () =>{
-    const [formData, setFormData] = useState({
+
+  const [cookies] = useCookies(["token"])
+  const [formData, setFormData] = useState({
         name: '',
         type: 'park',
         address: '',
@@ -13,15 +16,24 @@ const AddEventForm = () =>{
 
 
     const handleChange= (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
     }
 
     
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await addEvent(formData)
+
+        try {
+           await addEvent(formData, cookies.token)
+           //console.log(cookies.token);
+           //console.log(formData);
         alert('Event added successfuly')
+        } catch (error) {
+          console.error(error)
+          alert("Failed to add event")
+        }
+       
     };
 
 

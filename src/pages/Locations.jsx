@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import { getEvents } from "../services/events";
+import { useCookies } from "react-cookie";
 
 const Locations=() => {
+    const [cookies] = useCookies(["token"])
     const[events, setEvents] = useState([])
 
     useEffect(()=>{
         async function fetchEvents() {
-         const data = await getEvents() 
+         const data = await getEvents(cookies.token) 
          setEvents(data)  
         }
         fetchEvents()
-    }, [])
+    }, [cookies.token])
 
 
     return(
