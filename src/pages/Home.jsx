@@ -1,6 +1,7 @@
 import { useAuth } from '../contexts/Auth/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import '../styles/home.css'
 
 const Home = () => {
   const { logout } = useAuth();
@@ -18,10 +19,6 @@ const Home = () => {
             <button>Get Started</button>
             </Link>
 
-
-
-
-      <h1>Welcome to your Dashboard</h1>
       <button onClick={handleLogOut}>LogOut</button>
     </div>
   );

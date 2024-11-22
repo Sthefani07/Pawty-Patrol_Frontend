@@ -70,6 +70,14 @@ const Locations=() => {
                 alert("Failed to update event")
             }
         }
+
+        //function to change time to 12h format
+        const TimeTo12h = (time24) => {
+            const [hours, minutes] = time24.split(":");
+            const hours12 = hours % 12 || 12;
+            const amPM = hours >= 12 ? "PM" : "AM";
+            return `${hours12}:${minutes} ${amPM}`
+        }
     
 
 
@@ -80,7 +88,7 @@ const Locations=() => {
                 <div key={event._id} className="event-card">
                     <h2>{event.name}</h2>
                     <p>{event.description}</p>
-                    <p>{event.date} at {event.time}</p>
+                    <p>{event.date} at { TimeTo12h(event.time)}</p>
                     <button onClick={() => handleEdit(event)} >Edit</button>
                     <button onClick={() => handleDelete(event._id)} >Delete</button>
                 </div>
