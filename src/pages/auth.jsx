@@ -6,11 +6,13 @@ const Auth = () => {
   const [newUser, setNewUser] = useState(false);
   return (
     <>
+    <div className='page-auth'>
       {newUser ? (
         <SignUp setNewUser={setNewUser} />
       ) : (
         <LoginForm setNewUser={setNewUser} />
       )}
+      </div>
     </>
   );
 };

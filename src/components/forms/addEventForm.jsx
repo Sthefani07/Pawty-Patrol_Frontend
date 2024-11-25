@@ -45,6 +45,7 @@ const AddEventForm = () =>{
         <option value="park">Park</option>
         <option value="cafe">Cafe</option>
         <option value="trail">Trail</option>
+        <option value="cafe">Events</option>
       </select>
       <input type="text" name="address" placeholder="Address" onChange={handleChange} required />
       <textarea name="description" placeholder="Description" onChange={handleChange} required />

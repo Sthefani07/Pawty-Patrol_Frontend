@@ -82,8 +82,9 @@ const Locations=() => {
 
 
     return(
-        <div>
+        <div className="page-locations"> 
             <h1>All Events</h1>
+             <p> No more scrolling for hours to find pet-friendly spots – Pawty Patrol puts exciting events and hangouts right at your fingertips! Whether it’s a dog yoga session, a cat adoption event, or a pup-friendly hike, you’ll always have something fun to look forward to. Find and create unforgettable events for your furry friends and make every moment a paw-some adventure!</p>
             {events.map((event) =>(
                 <div key={event._id} className="event-card">
                     <h2>{event.name}</h2>

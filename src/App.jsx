@@ -7,6 +7,7 @@ import AuthProvider from './contexts/Auth/AuthContext.jsx';
 import Locations from './pages/Locations.jsx'
 import AddEvent from './pages/AddEvent.jsx';
 import { useCookies } from 'react-cookie';
+import './app.css'
 
 
 
