@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { addEvent } from "../../services/events";
 import { useCookies } from "react-cookie";
+import axios from "axios";
 
 const AddEventForm = () =>{
-
+  const [user,setuser] = useState(null)
   const [cookies] = useCookies(["token"])
   const [formData, setFormData] = useState({
         name: '',
@@ -13,7 +14,23 @@ const AddEventForm = () =>{
         date: '',
         time: '',
     });
+ 
 
+    const [loading, setLoading] = useState(true) //to track if user is still loading
+    useEffect(()=>{
+      async function getData(){
+        try {
+           let response= await axios.get("http://localhost:3000/api/auth", {
+        headers: {"x-auth-token": cookies.token} //pass token to the authMidleware
+    })
+    setuser(response.data)
+        } catch (error) {
+          console.error(error)
+          
+        }
+      }
+      getData()
+    },[cookies.token])
 
     const handleChange= (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,8 +41,18 @@ const AddEventForm = () =>{
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        if (!user) {
+        alert("User information not loaded yet. Please wait and try again.");
+        return;
+    }
         try {
-           await addEvent(formData, cookies.token)
+          const newEvent = {
+            ...formData, 
+            userId: user._id 
+
+          }
+          //console.log(newEvent)
+           await addEvent(newEvent, cookies.token)
            //console.log(cookies.token);
            //console.log(formData);
         alert('Event added successfuly')

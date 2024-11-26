@@ -145,9 +145,15 @@ font-family: "Ribeye", serif;
 
 /* Locations Page */
 .page-locations {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers vertically */
+  align-items: center;     /* Centers horizontally */
+  min-height: 100vh;       /* Ensures the container takes full height of the viewport */
   background-color: #f4f4f4;
   padding: 40px;
 }
+
 
 .page-locations h1 {
   font-size: 3rem;
@@ -156,33 +162,71 @@ font-family: "Ribeye", serif;
   margin-bottom: 20px;
 }
 
-.page-locations p {
-  font-size: 1.4rem;
-  
-  padding: 10px;
-  margin: 0; 
-  width: 90%; 
-  max-width: 700px; 
+h3 {
+  font-size: 1.6rem;               /* Slightly larger font for better readability */
+  padding: 30px;                   /* Increased padding for a more spacious look */
+  margin: 20px 0;                  /* Adds margin for space between other elements */
+  width: 90%;
+  max-width: 8000px;                /* Increased max-width for a more open feel */
+  background-color: #fffae6;       /* Softer, warmer background color */
+  border-radius: 15px;             /* Slightly more rounded corners for a softer feel */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* A more subtle, larger shadow */
+  color: #555;                     /* Darker color for better text contrast */
+  text-align: center;              /* Centers the text */
+  line-height: 1.6;                /* Makes the text a bit more readable */
+  font-weight: 600;                /* Boldens the text for emphasis */
+  font-family: 'Roboto', sans-serif; /* More modern font for a cleaner look */
 }
 
-.event-card {
 
-  background-color: white;
+h3 span {
+  font-weight: 700;               /* Adds emphasis to certain parts of the text */
+  color: #ff8c00;                 /* Matching the orange color theme */
+}
+
+.page-locations p {
+  font-size: 1.4rem;
   padding: 20px;
-  margin-bottom: 20px;
+  margin: 0;
+  width: 90%;
+  max-width: 700px;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
+  color: #333;
+}
+
+
+/* Container for event cards */
+.event-cards-container {
+  display: flex;             
+  flex-wrap: wrap;          
+
+  gap: 50px;            
+  margin-top: 40px;          
+}
+
+/* Styling for individual event cards */
+.event-card {
+  background-color: #ffe6cc;
+  padding: 10px;
+  width: 28%;                /* Makes each card take up about half the container's width */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;    /* Stacks content vertically inside the card */
 }
 
 .event-card h2 {
   font-size: 2rem;
   color: #ff6700;
+  margin-bottom: 10px;
 }
 
 .event-card p {
-  font-size: 1.1rem;
+  font-size: 1.rem;
   margin-bottom: 10px;
+  color: #555;               /* Darker color for readability */
 }
 
 .event-card button {
@@ -190,6 +234,7 @@ font-family: "Ribeye", serif;
   padding: 10px 20px;
   font-size: 1rem;
   margin-right: 10px;
+  margin-bottom: 8px;
   border-radius: 5px;
 }
 
@@ -197,6 +242,12 @@ font-family: "Ribeye", serif;
   background-color: #ff6700;
 }
 
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 768px) {
+  .event-card {
+    width: 100%;              /* Full width for smaller screens */
+  }
+}
 /* Add Event Page */
 .page-add-event {
   background-color: #ffe6cc;

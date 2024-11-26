@@ -7,8 +7,8 @@ const Home = () => {
   const { logout } = useAuth();
   const nav = useNavigate();
 
-  function handleLogOut(e) {
-    logout();
+  async function handleLogOut(e) {
+    await logout();
     nav('/auth')
   }
   return (

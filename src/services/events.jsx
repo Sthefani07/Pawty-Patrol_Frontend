@@ -13,6 +13,7 @@ import axios from "axios";
 // POST new event ---------------------------------------------------------------------
     
 export const addEvent = (eventData, token) => {
+    //console.log(token)
     return axios
     .post("http://localhost:3000/api/locations", eventData, {
         headers: {"x-auth-token": token} //pass token to the authMidleware

@@ -27,6 +27,17 @@ const [formData, setFormData] = useState({
   nav('/dashboard')
 }
 
+
+const { logout } = useAuth();
+  const nav1 = useNavigate();
+
+  async function handleLogOut(e) {
+    await logout();
+alert("Goodbye! We’ll miss you. Come back soon to discover more exciting events for your furry friends!");
+    nav1('/auth')
+  }
+
+
 return (
     <div className='forms'>
       <h2>Login</h2>
@@ -46,7 +57,9 @@ return (
         </button>
       </form>
       <p>
-        Dont have an account? <button onClick={handleClick}>Sign Up</button>
+        Dont have an account? <button onClick={handleClick}>Sign Up</button><br></br><br></br>
+
+        <button onClick={handleLogOut}>LogOut</button>
       </p>
     </div>
   );
