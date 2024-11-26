@@ -51,7 +51,7 @@ const AddEventForm = () =>{
             userId: user._id 
 
           }
-          //console.log(newEvent)
+          console.log(newEvent)
            await addEvent(newEvent, cookies.token)
            //console.log(cookies.token);
            //console.log(formData);

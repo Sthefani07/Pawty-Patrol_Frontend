@@ -4,9 +4,14 @@
 Pawty Patrol is a web application that allows users to create and find pet-friendly events such as park visits, cafe meetups, and trail walks. This repository contains the frontend code for the application, built using **React**.
 
 
+
 The backend for this project is available [here](https://github.com/Sthefani07/Pawty-Patrol_Backend.git).
 
 ---
+
+https://github.com/user-attachments/assets/47d5e260-5497-4875-a236-59d98d5d26d9 
+
+
 
 ## Features
 
@@ -26,6 +31,22 @@ The backend for this project is available [here](https://github.com/Sthefani07/P
 - **React Router DOM**: For navigation between pages.
 - **React Cookies**: For managing user tokens (authentication).
 - **Axios**: For API calls to the backend.
+
+### Installation
+
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/pawty-patrol.git
+   cd pawty-patrol
+
+   - Install dependencies
+   npm install
+
+   -Run the application 
+   npm run dev
+
+
 
 ### Backend (Assumed Setup):
 - The backend is built using **Node.js** with **Express** and communicates via a RESTful API. Ensure the backend is running before starting the frontend.

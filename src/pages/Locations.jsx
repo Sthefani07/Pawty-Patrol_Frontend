@@ -91,6 +91,7 @@ const Locations=() => {
                 <div key={event._id} className="event-card">
                     <h2>{event.name}</h2>
                     <p>{event.description}</p>
+                    <p>{event.address}</p>
                     <p>{event.date} at { TimeTo12h(event.time)}</p>
                     <button onClick={() => handleEdit(event)} >Edit</button>
                     <button onClick={() => handleDelete(event._id)} >Delete</button>
